@@ -41,6 +41,7 @@ public class MainActivity extends LifecycleActivity {
         observable(scanViewModel);
         recyclerView=findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.VERTICAL,false));
+        recyclerView.setHasFixedSize(true);
     }
 
     private void observable(ScanViewModel scanViewModel) {

@@ -34,9 +34,17 @@ class ScanAdapter extends RecyclerView.Adapter<ScanAdapter.MyViewHolder> {
     @Override
     public void onBindViewHolder(ScanAdapter.MyViewHolder holder, int position) {
         Scan scaner=scan.get(position);
-        holder.scanviewBinding.setScan(scaner);
-        holder.scanviewBinding.executePendingBindings();
+        if (scaner!=null) {
+            holder.scanviewBinding.setScan(scaner);
+            holder.scanviewBinding.executePendingBindings();
+        }
 
+
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return position;
     }
 
     @Override
