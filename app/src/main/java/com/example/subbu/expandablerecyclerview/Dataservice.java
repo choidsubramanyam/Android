@@ -1,7 +1,10 @@
 package com.example.subbu.expandablerecyclerview;
 
+import android.arch.lifecycle.Lifecycle;
+import android.arch.lifecycle.LifecycleObserver;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
+import android.arch.lifecycle.OnLifecycleEvent;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -22,16 +25,17 @@ public class Dataservice {
 
     Scandetails scandetails=retrofit.create(Scandetails.class);
 
-    public LiveData<Example> getscandata(){
-        final MutableLiveData<Example> data=new MutableLiveData<>();
-        scandetails.getscandetails().enqueue(new Callback<Example>() {
+
+    public LiveData<Exampl> getscandata(){
+        final MutableLiveData<Exampl> data=new MutableLiveData<>();
+        scandetails.getscandetails().enqueue(new Callback<Exampl>() {
             @Override
-            public void onResponse(Call<Example> call, Response<Example> response) {
+            public void onResponse(Call<Exampl> call, Response<Exampl> response) {
                 data.setValue(response.body());
             }
 
             @Override
-            public void onFailure(Call<Example> call, Throwable t) {
+            public void onFailure(Call<Exampl> call, Throwable t) {
 
             }
         });

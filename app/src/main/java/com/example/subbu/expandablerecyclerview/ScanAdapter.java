@@ -2,6 +2,7 @@ package com.example.subbu.expandablerecyclerview;
 
 import android.content.Context;
 import android.databinding.DataBindingUtil;
+import android.support.v7.util.DiffUtil;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.view.ViewGroup;
 
 import com.example.subbu.expandablerecyclerview.databinding.ScanviewBinding;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,10 +20,10 @@ import java.util.List;
 class ScanAdapter extends RecyclerView.Adapter<ScanAdapter.MyViewHolder> {
     Context context;
     ScanviewBinding scanviewBinding;
-    List<Scan> scan;
+    List<Scan> scan=new ArrayList<>();
     public ScanAdapter(Context context, List<Scan> result) {
         this.context=context;
-        this.scan=result;
+        /*this.scan=result;*/
 
     }
 
@@ -38,8 +40,14 @@ class ScanAdapter extends RecyclerView.Adapter<ScanAdapter.MyViewHolder> {
             holder.scanviewBinding.setScan(scaner);
             holder.scanviewBinding.executePendingBindings();
         }
+    }
 
-
+    public void updateData(List<Scan> result){
+        ScanDiffutilClass scanDiffutilClass=new ScanDiffutilClass(result,this.scan);
+        DiffUtil.DiffResult diffResult=DiffUtil.calculateDiff(scanDiffutilClass);
+        this.scan.clear();
+        this.scan.addAll(result);
+        diffResult.dispatchUpdatesTo(this);
     }
 
     @Override

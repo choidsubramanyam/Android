@@ -9,6 +9,6 @@ import retrofit2.http.GET;
 
 public interface Scandetails {
     @GET("doctor/rest/api/67/scandetails?examinationDate=2017-08-16")
-    Call<Example> getscandetails();
+    Call<Exampl> getscandetails();
 
 }

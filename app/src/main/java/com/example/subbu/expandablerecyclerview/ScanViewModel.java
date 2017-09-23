@@ -9,13 +9,13 @@ import android.arch.lifecycle.LiveData;
  */
 
 public class ScanViewModel extends AndroidViewModel {
-    private final LiveData<Example> scanobservsble;
+    private final LiveData<Exampl> scanobservsble;
     public ScanViewModel(Application application) {
         super(application);
         scanobservsble=Dataservice.getInstance().getscandata();
     }
 
-    public LiveData<Example> getScanobservsble() {
+    public LiveData<Exampl> getScanobservsble() {
         return scanobservsble;
     }
 }
