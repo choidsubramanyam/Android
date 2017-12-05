@@ -26,7 +26,7 @@ public class MainActivity extends LifecycleActivity {
         setContentView(R.layout.activity_recycler);
        /* button=findViewById(R.id.button);
         textView=findViewById(R.id.textView);*/
-        viewModel= ViewModelProviders.of(this).get(ScoreViewModel.class);
+      //  viewModel= ViewModelProviders.of(this).get(ScanViewModel.class);
        /* button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -39,6 +39,7 @@ public class MainActivity extends LifecycleActivity {
         ScanViewModel scanViewModel=ViewModelProviders.of(this).get(ScanViewModel.class);
 //        Log.e("scan",""+scanViewModel.getScanobservsble().getValue().getResult());
         observable(scanViewModel);
+
         recyclerView=findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.VERTICAL,false));
         recyclerView.setHasFixedSize(true);
@@ -47,9 +48,9 @@ public class MainActivity extends LifecycleActivity {
     }
 
     private void observable(ScanViewModel scanViewModel) {
-        scanViewModel.getScanobservsble().observe(this, new Observer<Exampl>() {
+        scanViewModel.getScanobservsble().observe(this, new Observer<Example>() {
             @Override
-            public void onChanged(@Nullable Exampl example) {
+            public void onChanged(@Nullable Example example) {
                 scanAdapter.updateData(example.getResult());
                // recyclerView.setAdapter(scanAdapter);
                 Log.e("scand0",""+example.getResult().size());
