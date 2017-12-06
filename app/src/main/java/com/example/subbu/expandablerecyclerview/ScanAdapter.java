@@ -48,6 +48,7 @@ class ScanAdapter extends RecyclerView.Adapter<ScanAdapter.MyViewHolder> {
         this.scan.clear();
         this.scan.addAll(result);
         diffResult.dispatchUpdatesTo(this);
+
     }
 
     @Override
