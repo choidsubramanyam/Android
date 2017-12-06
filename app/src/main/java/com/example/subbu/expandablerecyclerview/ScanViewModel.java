@@ -12,7 +12,8 @@ public class ScanViewModel extends AndroidViewModel {
     private final LiveData<Exampl> scanobservsble;
     public ScanViewModel(Application application) {
         super(application);
-        scanobservsble=Dataservice.getInstance().getscandata();
+        Dataservice dataservice=new Dataservice();
+        scanobservsble=dataservice.getscandata();
     }
 
     public LiveData<Exampl> getScanobservsble() {

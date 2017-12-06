@@ -1,10 +1,7 @@
 package com.example.subbu.expandablerecyclerview;
 
-import android.arch.lifecycle.Lifecycle;
-import android.arch.lifecycle.LifecycleObserver;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
-import android.arch.lifecycle.OnLifecycleEvent;
 
 import retrofit2.Call;
 import retrofit2.Callback;
