@@ -3,9 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://E:\SubbuWorkspace\View-Model-Recyclerview\Androidworkspace.iml" filepath="E:\SubbuWorkspace\View-Model-Recyclerview\Androidworkspace.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/View-Model-Recyclerview.iml" filepath="$PROJECT_DIR$/.idea/View-Model-Recyclerview.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://E:\SubbuWorkspace\View-Model-Recyclerview\app\app.iml" filepath="E:\SubbuWorkspace\View-Model-Recyclerview\app\app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/View-Model.iml" filepath="$PROJECT_DIR$/View-Model.iml" />
+      <module fileurl="file://E:\SubbuWorkspace\View-Model\.idea\View-Model-Recyclerview.iml" filepath="E:\SubbuWorkspace\View-Model\.idea\View-Model-Recyclerview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../View-Model-Recyclerview/app/app.iml" filepath="$PROJECT_DIR$/../View-Model-Recyclerview/app/app.iml" />
+      <module fileurl="file://E:\SubbuWorkspace\View-Model\app\app.iml" filepath="E:\SubbuWorkspace\View-Model\app\app.iml" />
     </modules>
   </component>
 </project>

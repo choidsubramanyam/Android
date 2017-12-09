@@ -41,21 +41,23 @@ public class MainActivity extends LifecycleActivity {
         observable(scanViewModel);
 
         recyclerView=findViewById(R.id.recyclerview);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.VERTICAL,false));
+        recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
         recyclerView.setHasFixedSize(true);
         scanAdapter=new ScanAdapter(MainActivity.this,null);
         recyclerView.setAdapter(scanAdapter);
     }
 
     private void observable(ScanViewModel scanViewModel) {
-        scanViewModel.getScanobservsble().observe(this, new Observer<Example>() {
+        scanViewModel.getScanobservsble().observe(this, new Observer<Exampl>() {
             @Override
-            public void onChanged(@Nullable Example example) {
-                scanAdapter.updateData(example.getResult());
+            public void onChanged(@Nullable Exampl example) {
+             //   scanAdapter.updateData(example.getResult().get(0));
+                scanAdapter=new ScanAdapter(MainActivity.this,example.getResult().get(0));
+                recyclerView.setAdapter(scanAdapter);
                // recyclerView.setAdapter(scanAdapter);
-                Log.e("scand0",""+example.getResult().size());
+                Log.e("scand0",""+example.getResult().get(0));
                 for (int i=0;i<example.getResult().size();i++){
-                    Log.e("scanafterchange",""+example.getResult().get(i).getScanId());
+                    Log.e("scanafterchange",""+example.getResult().get(0).get(i).getScanId());
 
                 }
             }

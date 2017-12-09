@@ -8,4 +8,4 @@ import com.google.gson.annotations.SerializedName
 data class Exampl (@SerializedName("isSuccess") val isSuccess: Int,
                    @SerializedName("message") val message:String,
                    @SerializedName("status") val status:String,
-                   @SerializedName("result") val result:List<Scan>)
+                   @SerializedName("result") val result:List<List<Scan>>)

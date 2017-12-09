@@ -4,6 +4,7 @@ import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.support.v7.util.DiffUtil;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,7 +24,7 @@ class ScanAdapter extends RecyclerView.Adapter<ScanAdapter.MyViewHolder> {
     List<Scan> scan=new ArrayList<>();
     public ScanAdapter(Context context, List<Scan> result) {
         this.context=context;
-        /*this.scan=result;*/
+        this.scan=result;
 
     }
 
@@ -37,6 +38,7 @@ class ScanAdapter extends RecyclerView.Adapter<ScanAdapter.MyViewHolder> {
     public void onBindViewHolder(ScanAdapter.MyViewHolder holder, int position) {
         Scan scaner=scan.get(position);
         if (scaner!=null) {
+            Log.e("scanner",""+scaner);
             holder.scanviewBinding.setScan(scaner);
             holder.scanviewBinding.executePendingBindings();
         }
@@ -45,6 +47,7 @@ class ScanAdapter extends RecyclerView.Adapter<ScanAdapter.MyViewHolder> {
     public void updateData(List<Scan> result){
         ScanDiffutilClass scanDiffutilClass=new ScanDiffutilClass(result,this.scan);
         DiffUtil.DiffResult diffResult=DiffUtil.calculateDiff(scanDiffutilClass);
+        Log.e("shui",""+result.size());
         this.scan.clear();
         this.scan.addAll(result);
         diffResult.dispatchUpdatesTo(this);
@@ -58,7 +61,7 @@ class ScanAdapter extends RecyclerView.Adapter<ScanAdapter.MyViewHolder> {
 
     @Override
     public int getItemCount() {
-        return scan.size();
+        return (scan!=null && scan.size()>0)?scan.size():0;
     }
 
 

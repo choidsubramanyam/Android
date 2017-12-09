@@ -2,6 +2,7 @@ package com.example.subbu.expandablerecyclerview;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
+import android.util.Log;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -33,7 +34,7 @@ public class Dataservice {
 
             @Override
             public void onFailure(Call<Exampl> call, Throwable t) {
-
+                Log.e("fs",""+call.request().url());
             }
         });
         return data;
